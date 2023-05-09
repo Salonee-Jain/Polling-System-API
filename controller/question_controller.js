@@ -54,3 +54,18 @@ module.exports.delete = async function(req, res) {
       return res.status(500).json({ error: 'Internal server error' });
     }
   }
+
+  module.exports.getQuestion = function(req, res){
+    try{
+      let question = Question.findById(req.params.id).populate('options');
+      if(question){
+        return res.status(200).json({question})
+      }else{
+        return res.status(404).json({message:"Question not found"})
+      }
+
+    }catch(err){
+      return res.status(500).json({message:"Internal server error"})
+      
+    }
+  }

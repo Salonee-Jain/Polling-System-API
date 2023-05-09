@@ -6,7 +6,7 @@ const questionController = require('../controller/question_controller');
 
 // Route for creating a new question
 router.post('/create', questionController.create);
-
+router.get('/:id', questionController.getQuestion)
 // Route for deleting a question with the given ID
 router.delete('/:id/delete',  questionController.delete);
 
