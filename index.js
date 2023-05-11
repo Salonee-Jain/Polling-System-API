@@ -2,7 +2,7 @@
 const express = require('express');
 //Create a new instance of the express app
 const app = express();
-const PORT = 8000;
+const PORT = 3000;
 const db = require('./config/mongoose')
 const bodyParser = require('body-parser');
 
